@@ -1,0 +1,1394 @@
+= mybatis-puls
+
+
+[[_overview]]
+== Overview
+API文档
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : v1.0
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : 邹智敏
+
+
+=== License information
+[%hardbreaks]
+__License__ : 邮箱：1596762965@qq.com
+__Terms of service__ : https://www.zzmmax.com
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost
+__BasePath__ : /mybatisplus
+
+
+=== Tags
+
+* 用户特征管理 : 用户特征分页查询、单个查询、单个删除、批量删除、按条件删除、单个修改
+* 用户管理 : 用户分页查询、单个查询、单个删除、批量删除、按条件删除、单个修改
+
+
+
+
+[[_paths]]
+== Paths
+
+[[_getcountusingpost]]
+=== 查询总记录数
+....
+POST /features/getCount
+....
+
+
+==== Description
+查询总记录数
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户特征管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/features/getCount
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getdeleteusingpost]]
+=== 删除
+....
+POST /features/getDelete/{id}
+....
+
+
+==== Description
+用户单个删除
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int64)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户特征管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/features/getDelete/0
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getdeleteidusingpost]]
+=== 按条件删除
+....
+POST /features/getDeleteId
+....
+
+
+==== Description
+按条件删除
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**features** +
+__required__|features|<<_features,Features>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户特征管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/features/getDeleteId
+----
+
+
+===== Request body
+[source,json]
+----
+{
+  "fatOrThin" : "string",
+  "height" : 0.0,
+  "id" : "string"
+}
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getdeleteidlistusingpost]]
+=== 批量删除
+....
+POST /features/getDeleteIdList
+....
+
+
+==== Description
+根据用户id批量删除
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**ids** +
+__required__|ids|< integer (int32) > array
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户特征管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/features/getDeleteIdList
+----
+
+
+===== Request body
+[source,json]
+----
+[ 0 ]
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getoneusingpost]]
+=== 按条件查询
+....
+POST /features/getOne
+....
+
+
+==== Description
+按条件查询
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**features** +
+__required__|features|<<_features,Features>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户特征管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/features/getOne
+----
+
+
+===== Request body
+[source,json]
+----
+{
+  "fatOrThin" : "string",
+  "height" : 0.0,
+  "id" : "string"
+}
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getsaveusingpost]]
+=== 新增
+....
+POST /features/getSave
+....
+
+
+==== Description
+用户单个新增
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**features** +
+__required__|features|<<_features,Features>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户特征管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/features/getSave
+----
+
+
+===== Request body
+[source,json]
+----
+{
+  "fatOrThin" : "string",
+  "height" : 0.0,
+  "id" : "string"
+}
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getupdateusingpost]]
+=== 修改
+....
+POST /features/getUpdate
+....
+
+
+==== Description
+用户单个修改
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**fatOrThin** +
+__optional__|胖或瘦|string
+|**Query**|**height** +
+__optional__|身高|number (float)
+|**Query**|**id** +
+__optional__|编号|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户特征管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/features/getUpdate
+----
+
+
+===== Request query
+[source,json]
+----
+{
+  "fatOrThin" : "string",
+  "height" : 0.0,
+  "id" : "string"
+}
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getuserlistusingpost]]
+=== 查询
+....
+POST /features/getUserList/{id}
+....
+
+
+==== Description
+用户单个查询
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户特征管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/features/getUserList/0
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getuserlistusingpost_1]]
+=== 分页
+....
+POST /features/getUserList/{pageNum}/{pageSize}
+....
+
+
+==== Description
+用户分页查询，默认是1页10条记录
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**pageNum** +
+__required__|pageNum|integer (int32)
+|**Path**|**pageSize** +
+__required__|pageSize|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户特征管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/features/getUserList/0/0
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getcountusingpost_1]]
+=== 查询总记录数
+....
+POST /user/getCount
+....
+
+
+==== Description
+查询总记录数
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/user/getCount
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getdeleteusingpost_1]]
+=== 删除
+....
+POST /user/getDelete/{id}
+....
+
+
+==== Description
+用户单个删除
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int64)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/user/getDelete/0
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getdeleteidusingpost_1]]
+=== 按条件删除
+....
+POST /user/getDeleteId
+....
+
+
+==== Description
+按条件删除
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**user** +
+__required__|user|<<_user,User>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/user/getDeleteId
+----
+
+
+===== Request body
+[source,json]
+----
+{
+  "age" : 22,
+  "email" : "adgjlakd@154",
+  "id" : 100,
+  "name" : "james"
+}
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getdeleteidlistusingpost_1]]
+=== 批量删除
+....
+POST /user/getDeleteIdList
+....
+
+
+==== Description
+根据用户id批量删除
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**ids** +
+__required__|ids|< integer (int32) > array
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/user/getDeleteIdList
+----
+
+
+===== Request body
+[source,json]
+----
+[ 0 ]
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getoneusingpost_1]]
+=== 按条件查询
+....
+POST /user/getOne
+....
+
+
+==== Description
+按条件查询
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**user** +
+__required__|user|<<_user,User>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/user/getOne
+----
+
+
+===== Request body
+[source,json]
+----
+{
+  "age" : 22,
+  "email" : "adgjlakd@154",
+  "id" : 100,
+  "name" : "james"
+}
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getsaveusingpost_1]]
+=== 新增
+....
+POST /user/getSave
+....
+
+
+==== Description
+用户单个新增
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**user** +
+__required__|user|<<_user,User>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/user/getSave
+----
+
+
+===== Request body
+[source,json]
+----
+{
+  "age" : 22,
+  "email" : "adgjlakd@154",
+  "id" : 100,
+  "name" : "james"
+}
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getupdateusingpost_1]]
+=== 修改
+....
+POST /user/getUpdate
+....
+
+
+==== Description
+用户单个修改
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**age** +
+__required__|年龄|integer (int32)
+|**Query**|**email** +
+__required__|邮箱|string
+|**Query**|**id** +
+__optional__|主键ID|integer (int64)
+|**Query**|**name** +
+__required__|姓名|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/user/getUpdate
+----
+
+
+===== Request query
+[source,json]
+----
+{
+  "age" : 22,
+  "email" : "adgjlakd@154",
+  "id" : 100,
+  "name" : "james"
+}
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getuserlistusingpost_2]]
+=== 查询
+....
+POST /user/getUserList/{id}
+....
+
+
+==== Description
+用户单个查询
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/user/getUserList/0
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+[[_getuserlistusingpost_3]]
+=== 分页
+....
+POST /user/getUserList/{pageNum}/{pageSize}
+....
+
+
+==== Description
+用户分页查询，默认是1页10条记录
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**pageNum** +
+__required__|pageNum|integer (int32)
+|**Path**|**pageSize** +
+__required__|pageSize|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_result,Result>>
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理
+
+
+==== Example HTTP request
+
+===== Request path
+----
+/user/getUserList/0/0
+----
+
+
+==== Example HTTP response
+
+===== Response 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "msg" : "string"
+}
+----
+
+
+
+
+[[_definitions]]
+== Definitions
+
+[[_features]]
+=== Features
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**fatOrThin** +
+__optional__|胖或瘦 +
+**Example** : `"string"`|string
+|**height** +
+__optional__|身高 +
+**Example** : `0.0`|number (float)
+|**id** +
+__optional__|编号 +
+**Example** : `"string"`|string
+|===
+
+
+[[_result]]
+=== Result
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**code** +
+__optional__|状态码 +
+**Example** : `0`|integer (int32)
+|**data** +
+__optional__|返回数据 +
+**Example** : `"object"`|object
+|**msg** +
+__optional__|返回信息 +
+**Example** : `"string"`|string
+|===
+
+
+[[_user]]
+=== User
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**age** +
+__required__|年龄 +
+**Example** : `22`|integer (int32)
+|**email** +
+__required__|邮箱 +
+**Example** : `"adgjlakd@154"`|string
+|**id** +
+__optional__|主键ID +
+**Example** : `100`|integer (int64)
+|**name** +
+__required__|姓名 +
+**Example** : `"james"`|string
+|===
+
+
+
+
+
